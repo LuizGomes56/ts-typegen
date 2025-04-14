@@ -106,7 +106,7 @@ export function activate(context: vscode.ExtensionContext) {
 						const newType = `export type ${mapTypeName[project]} = ${typedef}`;
 						const workspace = vscode.workspace.workspaceFolders;
 						if (workspace) {
-							const projectPath = workspace[0].uri.fsPath + "/dbrules/src/routes/output/" + project + ".out.ts";
+							const projectPath = workspace[0].uri.fsPath + "/dbrules/declaration/routes/output/" + project + ".out.d.ts";
 							await vscode.workspace.fs.writeFile(vscode.Uri.file(projectPath), Buffer.from(newType));
 						}
 					}
